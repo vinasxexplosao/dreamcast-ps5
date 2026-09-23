@@ -27,3 +27,4 @@ set_target_properties(dreamcast_ps5 PROPERTIES
 # add_subdirectory(port/ps5/input)   # M4
 # add_subdirectory(port/ps5/storage) # M4
 # add_subdirectory(frontend)         # M6
+target_link_libraries(dreamcast_ps5 PRIVATE SceNotification)
