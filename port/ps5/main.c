@@ -1,9 +1,13 @@
 /*
- * dreamcast_ps5.elf — ponto de entrada do payload
+ * dreamcast_ps5 — ponto de entrada do payload
  *
  * Regra do projeto: este código NÃO sabe nada sobre exploit,
  * kernel ou offsets. Quem carrega este ELF é a cadeia externa
  * (BD-JB/P2JB -> elfldr). Aqui começa apenas o emulador.
+ *
+ * Dois pontos de entrada:
+ *   - payload_main: usado quando compilado com a toolchain do PS5SDK
+ *   - main: usado no build de teste no PC (prova de sanidade)
  */
 
 #include <stdio.h>
@@ -24,3 +28,13 @@ int payload_main(int argc, const char **argv)
     printf("dreamcast_ps5: encerrando com exit limpo\n");
     return 0;
 }
+
+#ifndef PS5_BUILD
+/* Build de teste no PC: o linker exige uma função main.
+ * No console, a toolchain do PS5SDK usa payload_main e
+ * este bloco nem existe. */
+int main(int argc, const char **argv)
+{
+    return payload_main(argc, argv);
+}
+#endif

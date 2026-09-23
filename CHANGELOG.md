@@ -9,6 +9,8 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.
 - Estrutura inicial do repositório
 - Documentação de setup dos consoles 7.61 e 11.20
 - CHANGELOG e .gitignore de proteção de conteúdo
+- Stub do payload_main com build de teste no PC compilando (M2 — prova de sanidade)
+- Configuração CMake inicial e primeira execução do binário de teste
 
 ## Marcos planejados
 - [ ] M1 — Build do Flycast no PC (referência)
