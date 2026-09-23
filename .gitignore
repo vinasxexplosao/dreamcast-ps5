@@ -1,0 +1,29 @@
+# ===== CONTEUDO PROTEGIDO — NUNCA COMITAR =====
+# BIOS, jogos e dados do usuario ficam FORA do repositorio
+*.chd
+*.gdi
+*.cdi
+*.cue
+*.iso
+*.bin
+*.elf
+bios/
+content/
+games/
+saves/
+states/
+
+# ===== ARQUIVOS DE BUILD =====
+build/
+dist/
+*.o
+*.obj
+*.a
+*.so
+*.d
+
+# ===== EDITORES E SISTEMA =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
