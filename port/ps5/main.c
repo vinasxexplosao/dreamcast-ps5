@@ -49,8 +49,8 @@ static const char toast_tmpl[] =
 
 int main(int argc, const char **argv)
 {
-    /* M2/M2b (marco atual): provar que o ELF inicia, dá feedback
-     * visível na tela e sai de forma limpa sem travar o console. */
+    /* M2b (marco atual): ELF inicia, dá feedback VISIVEL na tela
+     * do console e sai limpo, sem travar nada. */
     printf("dreamcast_ps5: payload iniciado\n");
     printf("dreamcast_ps5: marco M2 — ELF minimo\n");
 
@@ -65,4 +65,6 @@ int main(int argc, const char **argv)
      * TODO M5: integrar core Flycast
      * TODO M6: frontend listando games/ do HD/SSD */
 
-    printf("dreamcast_ps5:
+    printf("dreamcast_ps5: encerrando com exit limpo\n");
+    return 0;
+}
