@@ -1,5 +1,3 @@
-# dreamcast-ps5
-Emulador Dreamcast nativo para PS5 — payload + interface própria
 # Dreamcast PS5 Homebrew — build principal
 #
 # Este CMakeLists é o esqueleto inicial (M2). Ele ainda não compila
