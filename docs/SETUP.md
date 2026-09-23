@@ -1,29 +1,22 @@
 # Setup do Console de Teste — PS5
 
-## Console
-- Firmware: 7.61
-- REGRAS: NUNCA atualizar o console. Sem login na PSN. Sem conectar na internet.
+> Última atualização: 22/09/2026
 
-## Segundo console (backup)
-- Firmware: 11.20 — não mexer por enquanto, aguardar exploit de kernel.
+## Consoles do projeto
 
-## Cadeia de execução (como o emulador roda no PS5)
-1. BD-JB — exploit que entra pelo Blu-ray do console
-2. Kernel exploit — ganha privilégios no sistema
-3. elfldr — programa que carrega nosso arquivo ELF
-4. dreamcast_ps5.elf — nosso emulador de Dreamcast
+| Console | Firmware | Papel | Cadeia atual |
+|---|---|---|---|
+| PS5 #1 | 7.61 | **Desenvolvimento principal** (mais rápido, comunidade maior) | BD-JB (TheFloW) + kernel + elfldr |
+| PS5 #2 | 11.20 | **Laboratório de compatibilidade** | P2JB / BD-JB5 (cobertura estendida até ~12.70) |
 
-## HD/SSD externo (estrutura de pastas)
-dreamcast/
-├── bios/       → arquivo dc_boot.bin (BIOS do Dreamcast, fornecido pelo usuário)
-├── games/      → jogos convertidos em .chd
-├── saves/      → saves e VMU
-└── states/     → save states
+### Regras de segurança (invioláveis)
+- **NUNCA atualizar** nenhum dos dois consoles.
+- **NUNCA logar na PSN** — sem conta conectada, sem internet nos testes.
+- 13.60 está no privado (não confirmado publicamente) — **não planejar com base nisso**.
+- 12.70 é o limite atual do P2JB publicamente conhecido.
 
-## Links úteis
-- Flycast (emulador base): https://github.com/flyinghead/flycast
-- PS5SDK: https://github.com/PS5Dev/PS5SDK
-- Payload loader: https://github.com/cy33hc/ps5-payload-loader
-
-## Problemas encontrados
-- (anotar aqui tudo que der errado no console e como resolveu)
+## Filosofia de compatibilidade entre firmwares
+1. O emulador (`dreamcast_ps5.elf`) deve ser **um único binário para todos os firmwares**.
+2. O emulador **não sabe nada sobre exploit, kernel ou offsets** — quem ganha privilégios é a cadeia externa.
+3. **Proibido** no código: `if (firmware == 7.61)`. Usar detecção em tempo de execução (função existe? caminho acessível?).
+4. A cadeia muda por firmware;
