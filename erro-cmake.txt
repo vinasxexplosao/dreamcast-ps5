@@ -1,0 +1,36 @@
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - broken
+CMake Error at /usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "/usr/bin/cc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '/workspaces/dreamcast-ps5/build/CMakeFiles/CMakeScratch/TryCompile-eeuLCM'
+    
+    Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3732d/fast
+    /usr/bin/gmake  -f CMakeFiles/cmTC_3732d.dir/build.make CMakeFiles/cmTC_3732d.dir/build
+    gmake[1]: Entering directory '/workspaces/dreamcast-ps5/build/CMakeFiles/CMakeScratch/TryCompile-eeuLCM'
+    Building C object CMakeFiles/cmTC_3732d.dir/testCCompiler.c.o
+    /usr/bin/cc   --target=x86_64-freebsd-pc-elf -O0 -DPPR -DPS5 -DPS5_FW_VERSION=0x403  -D_POSIX_SOURCE -D_POSIX_C_SOURCE=200112 -D__BSD_VISIBLE=1 -D__XSI_VISIBLE=500 -fno-builtin -nostdlib -Wall -m64 -fomit-frame-pointer -fPIC -fPIE -pie -Wl,-z,norelro  -o CMakeFiles/cmTC_3732d.dir/testCCompiler.c.o -c /workspaces/dreamcast-ps5/build/CMakeFiles/CMakeScratch/TryCompile-eeuLCM/testCCompiler.c
+    cc: error: unrecognized command-line option ‘--target=x86_64-freebsd-pc-elf’
+    gmake[1]: *** [CMakeFiles/cmTC_3732d.dir/build.make:78: CMakeFiles/cmTC_3732d.dir/testCCompiler.c.o] Error 1
+    gmake[1]: Leaving directory '/workspaces/dreamcast-ps5/build/CMakeFiles/CMakeScratch/TryCompile-eeuLCM'
+    gmake: *** [Makefile:127: cmTC_3732d/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:8 (project)
+
+
+-- Configuring incomplete, errors occurred!
