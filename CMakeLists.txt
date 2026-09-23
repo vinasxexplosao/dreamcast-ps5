@@ -7,6 +7,10 @@
 cmake_minimum_required(VERSION 3.20)
 project(dreamcast_ps5 C)
 
+if(CMAKE_TOOLCHAIN_FILE MATCHES "prospero")
+    add_compile_definitions(PS5_BUILD)
+endif()
+
 # Fontes do payload
 add_executable(dreamcast_ps5
     port/ps5/main.c
